@@ -1,9 +1,57 @@
-<!-- app.component.html -->
-<p-button 
-  label="Click Me" 
-  icon="pi pi-check" 
-  (onClick)="doSomething()">
-</p-button>
+<!-- PrimeNG MenuBar Navigation -->
+<p-menubar [model]="menuItems" styleClass="main-menubar custom-menubar border-b border-gray-200 px-20 py-3 custom-menubar">
+  
+  <ng-template pTemplate="start">
+    <div class="brand-logo flex items-center space-x-2 font-bold text-lg">
+      <i class="pi pi-ethereum" style="font-size: 1.5rem; color: #4F46E5;"></i>
+      <span class="brand-text text-gray-900">enjooy</span>
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="end">
+    <div class="flex items-center space-x-2">
+      <p-button label="Sign in" [text]="true" styleClass="px-4 py-2 text-blue-600 bg-blue-50 hover:bg-blue-100 rounded-md"></p-button>
+      <p-button label="Register" styleClass="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md"></p-button>
+    </div>
+  </ng-template>
+
+</p-menubar>
 
 
-<router-outlet />
+
+<!-- Main Content -->
+<main>
+  <app-homepage></app-homepage>
+</main>
+
+<!-- Optional: Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>TechBlog</h4>
+        <p>Your go-to source for web development insights and tutorials.</p>
+      </div>
+      <div class="footer-section">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Articles</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h5>Follow Us</h5>
+        <div class="social-links">
+          <a href="#" class="social-link">Twitter</a>
+          <a href="#" class="social-link">LinkedIn</a>
+          <a href="#" class="social-link">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 TechBlog. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
