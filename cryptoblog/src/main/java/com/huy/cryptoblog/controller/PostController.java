@@ -14,6 +14,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/posts")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequiredArgsConstructor
 public class PostController {
 
@@ -24,6 +25,7 @@ public class PostController {
         List<PostResponse> posts = postService.getAllPosts();
         return ResponseEntity.ok(posts);
     }
+
     @GetMapping
     public ResponseEntity<Page<PostResponse>> getPosts(@RequestParam(defaultValue = "0") int page,
                                                        @RequestParam(defaultValue = "5") int size) {
